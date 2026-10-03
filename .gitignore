@@ -1,0 +1,6 @@
+node_modules/
+lib/
+reports/
+*.tgz
+oclif.manifest.json
+.DS_Store

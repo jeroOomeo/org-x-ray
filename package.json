@@ -1,0 +1,59 @@
+{
+  "name": "plugin-org-xray",
+  "description": "Salesforce CLI plugin that audits an org for tech debt, security risks and limits, and writes an HTML health report.",
+  "version": "0.1.0",
+  "author": "Jerome Pacomios",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "org-xray": "bin/run.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "oclif.manifest.json"
+  ],
+  "keywords": [
+    "salesforce",
+    "sf",
+    "sf-plugin",
+    "org-health",
+    "audit"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "node --test test/*.test.js",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@oclif/core": "^4",
+    "@salesforce/core": "^8",
+    "@salesforce/sf-plugins-core": "^12"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5"
+  },
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "sf",
+    "topicSeparator": " ",
+    "topics": {
+      "xray": {
+        "description": "Audit a Salesforce org and report on its health."
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeroOomeo/org-x-ray.git"
+  },
+  "homepage": "https://github.com/jeroOomeo/org-x-ray#readme",
+  "bugs": {
+    "url": "https://github.com/jeroOomeo/org-x-ray/issues"
+  }
+}
